@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Large Files
+*.epub
+download.zip
+
+# Environment
+.env
+# (User wanted everything backed up, but .env is usually ignored. 
+# However, if I keep it ignoted, I have to force add it. 
+# Given the user's request for "this entire project", I will NOT ignore .env here 
+# unless I want to be safe. I'll comment it out to allow it, or just NOT list it.)
+# .env 
+
+# System
+.DS_Store
+Thumbs.db

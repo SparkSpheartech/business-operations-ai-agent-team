@@ -1,0 +1,52 @@
+{
+  "promptName": "Daisy - Apify Lead Generation and AI Enrichment Workflow",
+  "prompt": "Create a comprehensive n8n workflow that initiates a lead search using an Apify actor, transforms the raw scraped data, enriches each lead with AI-driven insights, and saves the final processed data to a local file.",
+  "objectives": [
+    "Execute a specific Apify actor ('google-map-leads-with-emails') to scrape business leads based on a predefined set of search terms and a geographic location.",
+    "Programmatically transform the raw JSON data returned by Apify, cleaning it and mapping it to a standardized, more usable structure.",
+    "For each cleaned lead, utilize a Google Gemini node to perform an AI analysis, generating a 'potentialPainPoint' and a 'personalizationHook'.",
+    "Aggregate the collection of individually enriched leads into a single, final JSON array.",
+    "Save the complete, enriched dataset to a specified local JSON file for subsequent use."
+  ],
+  "language": "The workflow should operate autonomously after being triggered. The AI enrichment prompt must be precise to ensure structured, consistent, and relevant analytical output for each lead.",
+  "outcomes": [
+    "A final JSON file ('Daisy - Analysis Results.json') is successfully created in the 'C:\Users\shaza\Downloads\' directory.",
+    "The output file must contain a JSON array of all the leads that were scraped and processed.",
+    "Each lead object within the final array must be verifiably enriched with the two new keys: 'potentialPainPoint' and 'personalizationHook'."
+  ],
+  "structure": {
+    "requirements": [
+      {
+        "step": 1,
+        "type": "Trigger",
+        "details": "The workflow must be triggerable by a 'Webhook' node to allow for on-demand execution."
+      },
+      {
+        "step": 2,
+        "type": "Data Acquisition",
+        "details": "An 'Apify' node must be used to run the 'google-map-leads-with-emails' actor with a defined input specifying search terms (e.g., 'Law Firm') and location ('Fort Wayne, IN')."
+      },
+      {
+        "step": 3,
+        "type": "Data Transformation",
+        "details": "A 'Code' node must follow the Apify node to process the raw output. This node will restructure the data, select key properties, and format it for the next step."
+      },
+      {
+        "step": 4,
+        "type": "AI Enrichment",
+        "details": "The workflow must process each lead individually through a 'Google Gemini' node. The prompt for this node will instruct the AI to analyze the lead's data and append the 'potentialPainPoint' and 'personalizationHook' fields."
+      },
+      {
+        "step": 5,
+        "type": "Aggregation",
+        "details": "A final 'Item Lists' or 'Aggregate' node must collect all the enriched leads and combine them into a single array."
+      },
+      {
+        "step": 6,
+        "type": "File Output",
+        "details": "The workflow must conclude with a 'Write Binary File' node that saves the final aggregated JSON array to the local path: 'C:\Users\shaza\Downloads\Daisy - Analysis Results.json'."
+      }
+    ]
+  },
+  "focus": "The primary focus is to create a fully automated pipeline within n8n that handles the entire lead generation and enrichment process, from initial scraping with Apify to producing a final, AI-enhanced data file ready for outreach."
+}
