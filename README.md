@@ -5,6 +5,33 @@
 
 ---
 
+## ❌ The Problem
+
+Running a tech business requires juggling sales, marketing, engineering, and executive decisions — all while maintaining context across domains. Information gets siloed, tasks fall through the cracks, and the CEO becomes the bottleneck. Traditional software tools don't think or adapt — they just store data.
+
+**Before:** Siloed tools, manual task management, context loss across teams, CEO as sole decision bottleneck, reactive operations.
+
+**After (AI Agent Team):** Four specialized AI agents (Executive Assistant, Marketing, Engineer, CEO) working in concert — shared context, autonomous task execution, proactive recommendations, 24/7 operations. The team runs itself.
+
+---
+
+## 🔄 Before vs After
+
+```mermaid
+graph LR
+    subgraph BEFORE["❌ Before"]
+        BM[Siloed business tools\nManual task coordination\nCEO as bottleneck\nReactive operations\nContext lost daily]
+    end
+
+    subgraph AFTER["✅ After (ADK Agent Team)"]
+        AM[4 specialized AI agents\nShared context across roles\nAutonomous task execution\n24/7 proactive operation\nCEO focuses on strategy]
+    end
+
+    BM -->|SparkSphear AI Agent Team| AM
+```
+
+---
+
 ## 🧠 AI Agent Team Architecture
 
 ```mermaid
